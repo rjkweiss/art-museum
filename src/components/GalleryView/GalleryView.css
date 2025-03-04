@@ -1,0 +1,11 @@
+.gallery-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+}

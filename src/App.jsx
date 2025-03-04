@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route} from 'react-router-dom';
+import harvardArt from './data/harvardArt';
+import GalleryNavigation from './components/GalleryNavigation/main';
+import GalleryView from './components/GalleryView/main';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="page-wrapper">
+      <GalleryNavigation galleries={harvardArt.records}/>
+
+      {/* set up some routes */}
+      <Routes>
+        <Route path='/' element={
+          <>
+            <h1>Harvard Art Museum</h1>
+            <p>Look, but Don't Touch. Please select a Gallery in the navigation bar.</p>
+          </>
+        } />
+        <Route path='/galleries/:galleryId/*' element={<GalleryView galleries={harvardArt.records} />} />
+        <Route path='*' element={<h2>Page Not Found</h2>} />
+      </Routes>
+    </div>
   )
 }
 

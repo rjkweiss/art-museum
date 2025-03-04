@@ -1,0 +1,21 @@
+
+.art-description {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.art-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.art-images img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 10px;
+}

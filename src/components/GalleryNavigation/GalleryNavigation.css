@@ -1,0 +1,15 @@
+.active, nav a.active {
+    font-weight: bold;
+    color: red;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation-links {
+    padding: 10px;
+    text-decoration: none;
+}
